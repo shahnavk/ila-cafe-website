@@ -16,11 +16,11 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    'Home',
-    'About Us',
-    'Gallery',
+    // 'Home',
+    // 'About Us',
+    // 'Gallery',
     'Menu',
-    'Contact Us',
+    // 'Contact Us',
   ];
 
   return (

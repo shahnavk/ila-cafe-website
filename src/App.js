@@ -8,6 +8,11 @@ import Home from './pages/Home';
 import Menu from './pages/Menu';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import AnniversaryLot from './pages/AnniversaryLot';
+import AnniversaryLotSuccess from './pages/AnniversaryLotSuccess';
+
+
+
 
 function App() {
   return (
@@ -20,6 +25,8 @@ function App() {
             <Route path="/menu" element={<Menu />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/anniversaryLot" element={<AnniversaryLot />} />
+            <Route path="/anniversary-lot-success" element={<AnniversaryLotSuccess />} />
           </Routes>
         </main>
         <Footer />

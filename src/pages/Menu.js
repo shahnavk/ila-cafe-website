@@ -56,7 +56,7 @@ const Menu = () => {
   const [activeTab, setActiveTab] = useState(categories[0]);
 
   return (
-    <div className="p-6 max-w-6xl mx-auto bg-cafe-texture bg-cover bg-center min-h-screen">
+    <div className="p-6 max-w-6xl mx-auto min-h-screen">
       <h1 className="text-3xl font-bold mb-6 text-center text-textbrown">Our Menu</h1>
 
       {/* Tabs */}

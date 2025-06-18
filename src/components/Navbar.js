@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Search, Menu as MenuIcon, X } from "lucide-react";
+import { Link } from 'react-router-dom';
+
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,7 +32,9 @@ export default function Navbar() {
       <div className="flex items-center justify-between px-6 p-[10px] min-h-[80px]">
         {/* Logo */}
         <div className="flex items-center">
-          <img src="/ila-Logo-svg.svg" alt="Ila Cafe Logo" className="h-20 w-auto" />
+        <Link to="/">
+    <img src="/ila-Logo-svg.svg" alt="Ila Cafe Logo" className="h-20 w-auto" />
+  </Link>
         </div>
 
         {/* Desktop Nav */}
@@ -44,6 +48,9 @@ export default function Navbar() {
               {label}
             </a>
           ))}
+          <Link to="/anniversaryLot" className="bg-cafebrown text-white px-4 py-2 rounded-full">
+  Join Anniversary Lot
+</Link>
           <button className="hover:text-cafegreen">
             <Search size={20} />
           </button>

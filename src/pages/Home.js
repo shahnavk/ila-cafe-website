@@ -8,7 +8,7 @@ const Home = () => (
     Serving irresistible waffles, dreamy desserts, and refreshing drinks <br/>in the heart of London.
   </p>
   <a
-  href="#menu"
+  href="menu"
   className="inline-block mt-6 bg-cafegreen text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-cafebrown transition"
 >
   View Our Menu

@@ -23,7 +23,7 @@ const Home = () => (
             <strong>Mercedes Benz A180</strong>
           </p>
           <a
-            href="/anniversary-lot"
+            href="/anniversaryLot"
             className="inline-block mt-2 bg-gradient-to-r from-cafegreen via-textbrown to-cafegreen bg-[length:150%_200%] text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition font-semibold animate-gradient-x"
           >
             Enter the Lot Now →

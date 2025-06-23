@@ -1,33 +1,33 @@
-import React from 'react';
-import carImage from '../assets/Benz.png'; // <- Make sure to place an image in /src/assets/
+import React from "react";
+import carImage from "../assets/Benz.png"; // <- Make sure to place an image in /src/assets/
 
 const Home = () => (
   <>
     {/* Welcome Section */}
     <section className="relative bg-cafe-texture bg-cover bg-center py-8 pt-0">
       {/* 🎉 Anniversary Lot - Top Banner */}
-      <div className=" mx-auto grid md:grid-cols-3 gap-[10px] items-center p-2 sm:px-20 bg-white bg-opacity-50 mb-8">
+      <div className=" mx-auto grid grid-cols-2 md:grid-cols-3 gap-[10px] items-center p-2 sm:px-20 bg-white bg-opacity-50 mb-8">
         {/* Text */}
-        <div className="w-60 h-60 rounded-full bg-cafebrown flex items-center justify-center mx-auto text-center p-4 shadow-lg">
-          
+        <div className="w-44 h-44 sm:w-52 sm:h-52 rounded-full bg-cafebrown flex items-center justify-center mx-auto text-center p-4 shadow-lg">
           <p className="text-center text-sm sm:text-base p-0 text-white">
-          A chance to win, <br/>limited to <strong>799 entries</strong>.<br/> Join our Anniversary Lot today.
+            A chance to win, <br />
+            limited to <strong>799 entries</strong>.<br /> Join our Anniversary
+            Lot today.
           </p>
         </div>
-        <div className="text-center md:text-center">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-textbrown animate-[zoomInOut_2s_ease-in-out_infinite]">
-            {/* 🎉 🎉 */}Anniversary Gift 
+        <div className="text-center md:text-center col-start-2 col-end-3 row-start-1 row-end-3 md:col-auto md:row-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-textbrown animate-[zoomInOut_2s_ease-in-out_infinite]">
+            {/* 🎉 🎉 */}Anniversary Gift
           </h2>
           <p className="text-base sm:text-lg text-cafebrown m-4">
             <strong>Mercedes Benz A180</strong>
           </p>
           <a
-  href="/anniversary-lot"
-  className="inline-block mt-2 bg-gradient-to-r from-cafegreen via-textbrown to-cafegreen bg-[length:200%_200%] text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition font-semibold animate-gradient-x"
->
-  Enter the Lot Now →
-</a>
-
+            href="/anniversary-lot"
+            className="inline-block mt-2 bg-gradient-to-r from-cafegreen via-textbrown to-cafegreen bg-[length:150%_200%] text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition font-semibold animate-gradient-x"
+          >
+            Enter the Lot Now →
+          </a>
         </div>
         {/* Image */}
         <img

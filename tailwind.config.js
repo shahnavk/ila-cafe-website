@@ -8,8 +8,8 @@ module.exports = {
           '50%': { transform: 'scale(1.1)' },
         },
         gradient: {
-          '0%': { backgroundPosition: '90% 100%' },
-      '100%': { backgroundPosition: '0% 10%' },
+          '0%': { backgroundPosition: '200% 50%' },
+      '100%': { backgroundPosition: '-100% 50%' },
         },
       },
       animation: {

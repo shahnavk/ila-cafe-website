@@ -110,6 +110,9 @@ app.post('/create-checkout-session', async (req, res) => {
   }
 });
 const PORT = process.env.PORT || 4000;
+app.get('/', (req, res) => {
+  res.send('🎉 Ila Cafe backend is running!');
+});
 
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);

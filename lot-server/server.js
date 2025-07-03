@@ -50,39 +50,58 @@ app.post('/webhook', bodyParser.raw({ type: 'application/json' }), async (req, r
       return res.sendStatus(200);
     }
   
-    try {
-      const { Resend } = require('resend');
-      const resend = new Resend(process.env.RESEND_API_KEY);
+    // try {
+    //   const { Resend } = require('resend');
+    //   const resend = new Resend(process.env.RESEND_API_KEY);
   
-      await resend.emails.send({
-        from: 'onboarding@resend.dev',
-        to: email,
-        subject: '🎉 Your Ila Cafe Anniversary Lot Entry is Confirmed!',
-        html: `
-          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 20px;">
-            <img src="https://yourdomain.com/logo.png" alt="Ila Cafe Logo" style="max-width: 150px; display: block; margin-bottom: 20px;" />
-            <h2 style="color: #382218;">Hi ${name},</h2>
-            <p style="font-size: 16px; color: #444;">
-              Thank you for entering the <strong>Ila Cafe Anniversary Lot</strong>! 🎉
-            </p>
-            <div style="margin: 30px 0; padding: 20px; background: #fde7cc; text-align: center; border-radius: 12px;">
-              <p style="margin: 0; font-size: 18px; color: #382218;">Your Lot Number</p>
-              <h1 style="margin: 0; font-size: 36px; color: #b38e67;">${lotNumber}</h1>
-            </div>
-            <p style="font-size: 15px; color: #444;">
-              We’ll announce the winner on our Instagram soon. Be sure to follow us at 
-              <a href="https://instagram.com/ila.cafe" style="color: #7aa562;">@ila.cafe</a> 🍀
-            </p>
-            <p style="font-size: 13px; color: #aaa;">— The Ila Cafe Team</p>
-          </div>
-        `
-      });
+    //   await resend.emails.send({
+    //     from: 'onboarding@resend.dev',
+    //     to: email,
+    //     subject: '🎉 Your Ila Cafe Anniversary Lot Entry is Confirmed!',
+    //     html: `
+    //       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 20px;">
+    //         <img src="https://yourdomain.com/logo.png" alt="Ila Cafe Logo" style="max-width: 150px; display: block; margin-bottom: 20px;" />
+    //         <h2 style="color: #382218;">Hi ${name},</h2>
+    //         <p style="font-size: 16px; color: #444;">
+    //           Thank you for entering the <strong>Ila Cafe Anniversary Lot</strong>! 🎉
+    //         </p>
+    //         <div style="margin: 30px 0; padding: 20px; background: #fde7cc; text-align: center; border-radius: 12px;">
+    //           <p style="margin: 0; font-size: 18px; color: #382218;">Your Lot Number</p>
+    //           <h1 style="margin: 0; font-size: 36px; color: #b38e67;">${lotNumber}</h1>
+    //         </div>
+    //         <p style="font-size: 15px; color: #444;">
+    //           We’ll announce the winner on our Instagram soon. Be sure to follow us at 
+    //           <a href="https://instagram.com/ila.cafe" style="color: #7aa562;">@ila.cafe</a> 🍀
+    //         </p>
+    //         <p style="font-size: 13px; color: #aaa;">— The Ila Cafe Team</p>
+    //       </div>
+    //     `
+    //   });
       
   
-      console.log("✅ Email sent to", email);
-    } catch (error) {
-      console.error("❌ Failed to send email:", error);
-    }
+    //   console.log("✅ Email sent to", email);
+    // } catch (error) {
+    //   console.error("❌ Failed to send email:", error);
+    // }
+    console.log("📧 Attempting to send email to:", email);
+
+try {
+  const { Resend } = require('resend');
+  const resend = new Resend(process.env.RESEND_API_KEY);
+
+  const result = await resend.emails.send({
+    from: 'onboarding@resend.dev',
+    to: email,
+    subject: '🎉 Your Ila Cafe Anniversary Lot Entry is Confirmed!',
+    html: `<p>Hi ${name}, your lot number is <strong>${lotNumber}</strong></p>`, // Simplified for debugging
+  });
+
+  console.log("✅ Email sent to", email);
+  console.log("📨 Resend response:", result);
+} catch (error) {
+  console.error("❌ Failed to send email:", error);
+}
+
   }
   
 

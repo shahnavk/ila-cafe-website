@@ -23,7 +23,7 @@ const AnniversaryLot = () => {
       });
   
       // 2. Call your backend to create Stripe session
-      const response = await fetch('https://your-server-domain.com/create-checkout-session', {
+      const response = await fetch('https://ila-cafe-website.onrender.com/create-checkout-session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

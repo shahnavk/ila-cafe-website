@@ -12,13 +12,9 @@ const app = express();
 app.use(cors());
 
 // Use conditional body parsing: raw for webhook, json otherwise
-app.use((req, res, next) => {
-  if (req.originalUrl === '/webhook') {
-    next();
-  } else {
-    bodyParser.json()(req, res, next);
-  }
-});
+app.use('/webhook', bodyParser.raw({ type: 'application/json' }));
+app.use(bodyParser.json());
+
 
 // Your /webhook route with raw body parsing:
 app.post('/webhook', bodyParser.raw({ type: 'application/json' }), async (req, res) => {

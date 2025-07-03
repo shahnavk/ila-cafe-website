@@ -94,6 +94,19 @@ try {
 
   console.log("✅ Email sent to", email);
   console.log("📨 Resend response:", result);
+
+  // ✅ Save to Google Sheet
+const axios = require('axios');
+await axios.post('https://sheetdb.io/api/v1/dqvyfvsq0iezw', {
+  data: {
+    name,
+    email,
+    lotNumber,
+    used: "no"
+  }
+});
+console.log("📝 Saved to Google Sheet");
+
 } catch (error) {
   console.error("❌ Failed to send email:", error);
 }

@@ -1,0 +1,7 @@
+node_modules/
+.env
+lot-server/node_modules/
+lot-server/.env
+build/
+dist/
+.DS_Store

@@ -94,7 +94,7 @@ app.post(
         // const validUntil = new Date(now.getTime() + 6 * 30 * 24 * 60 * 60 * 1000).toLocaleDateString("en-GB");
         
         const date = now.toISOString().split("T")[0]; // YYYY-MM-DD
-        const time = now.toTimeString().split(" ")[0]; // HH:MM:SS
+        const time = now.toTimeString().split(" ")[0]; // HH:MM:
 
         const expiresAt = new Date();
         expiresAt.setMonth(expiresAt.getMonth() + 6);

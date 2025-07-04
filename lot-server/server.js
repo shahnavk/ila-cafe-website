@@ -90,9 +90,9 @@ app.post(
         const { Resend } = require("resend");
         const resend = new Resend(process.env.RESEND_API_KEY);
 
-        const now = new Date();
         const purchaseDate = now.toLocaleString("en-GB", { timeZone: "Europe/London" });
-        const validUntil = new Date(now.setMonth(now.getMonth() + 6)).toLocaleDateString("en-GB");
+        const validUntil = new Date(now.getTime() + 6 * 30 * 24 * 60 * 60 * 1000).toLocaleDateString("en-GB");
+        
 
         const result = await resend.emails.send({
           from: "onboarding@resend.dev",

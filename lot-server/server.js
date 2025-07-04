@@ -91,8 +91,14 @@ app.post(
         const resend = new Resend(process.env.RESEND_API_KEY);
         const now = new Date();
         const purchaseDate = now.toLocaleString("en-GB", { timeZone: "Europe/London" });
-        const validUntil = new Date(now.getTime() + 6 * 30 * 24 * 60 * 60 * 1000).toLocaleDateString("en-GB");
+        // const validUntil = new Date(now.getTime() + 6 * 30 * 24 * 60 * 60 * 1000).toLocaleDateString("en-GB");
         
+        const date = now.toISOString().split("T")[0]; // YYYY-MM-DD
+        const time = now.toTimeString().split(" ")[0]; // HH:MM:SS
+
+        const expiresAt = new Date();
+        expiresAt.setMonth(expiresAt.getMonth() + 6);
+        const expiryDate = expiresAt.toISOString().split("T")[0]; // 6 months later
 
         const result = await resend.emails.send({
           from: "Ila Cafe & Desserts <hello@ilacafedesserts.com>",
@@ -115,7 +121,7 @@ app.post(
 
     <p style="font-size: 15px; color: #444;">
       🗓️ <strong>Purchase Date:</strong> ${purchaseDate}<br />
-      📅 <strong>Valid Until:</strong> ${validUntil}<br />
+      📅 <strong>Valid Until:</strong> ${expiryDate}<br />
       💳 <strong>Amount Paid:</strong> £19.99 via Stripe
     </p>
 
@@ -138,12 +144,7 @@ app.post(
         const axios = require("axios");
 
         
-        const date = now.toISOString().split("T")[0]; // YYYY-MM-DD
-        const time = now.toTimeString().split(" ")[0]; // HH:MM:SS
-
-        const expiresAt = new Date();
-        expiresAt.setMonth(expiresAt.getMonth() + 6);
-        const expiryDate = expiresAt.toISOString().split("T")[0]; // 6 months later
+        
 
         await axios.post("https://sheetdb.io/api/v1/dqvyfvsq0iezw", {
           data: {

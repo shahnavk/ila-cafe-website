@@ -35,15 +35,19 @@ const AnniversaryLot = () => {
       );
 
       const session = await response.json();
-
       if (session.url) {
-        setTimeout(() => {
-          window.location.href = session.url;
-        }, 600); // Show loader for 600ms
+        // Ensure loader renders before redirect
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            window.location.href = session.url;
+          }, 500); // Adjust delay to control how long the loader shows
+        });
       } else {
         alert("Something went wrong, please try again.");
-        setLoading(false); // ❗ Stop loading if error
+        setLoading(false);
       }
+      
+      
     } catch (error) {
       console.error(error);
       alert("Error submitting form. Please try again.");

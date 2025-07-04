@@ -89,7 +89,7 @@ app.post(
       try {
         const { Resend } = require("resend");
         const resend = new Resend(process.env.RESEND_API_KEY);
-
+        const now = new Date();
         const purchaseDate = now.toLocaleString("en-GB", { timeZone: "Europe/London" });
         const validUntil = new Date(now.getTime() + 6 * 30 * 24 * 60 * 60 * 1000).toLocaleDateString("en-GB");
         
@@ -137,7 +137,7 @@ app.post(
 
         const axios = require("axios");
 
-        const now = new Date();
+        
         const date = now.toISOString().split("T")[0]; // YYYY-MM-DD
         const time = now.toTimeString().split(" ")[0]; // HH:MM:SS
 

@@ -19,6 +19,7 @@ module.exports = {
       backgroundImage: {
         'cafe-texture': "url('assets/home-banner.png')",
         'cafe-bg': "url('assets/bg.jpeg')",
+        'car-bg' : "url('assets/Benz.png')",
       },
       colors: {
         cafebeige: "#fde7cc",

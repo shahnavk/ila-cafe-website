@@ -99,6 +99,8 @@ app.post(
         const expiresAt = new Date();
         expiresAt.setMonth(expiresAt.getMonth() + 6);
         const expiryDate = expiresAt.toISOString().split("T")[0]; // 6 months later
+        const [year, month, day] = expiryDate.split("-");
+        const validUntil = expiresAt.toISOString().split("T")[0];
 
         const result = await resend.emails.send({
           from: "Ila Cafe & Desserts <hello@ilacafedesserts.com>",

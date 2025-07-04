@@ -100,7 +100,7 @@ app.post(
           subject: "🎉 Your Ila Cafe Anniversary Lot Entry is Confirmed!",
           html: `
   <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 20px;">
-    <img src="https://ilacafedesserts.com/logo.png" alt="Ila Cafe Logo" style="max-width: 150px; margin-bottom: 20px;" />
+    <img src="https://ilacafedesserts.com/ila-Logo-svg.svg" alt="Ila Cafe Logo" style="max-width: 150px; margin-bottom: 20px;" />
     
     <h2 style="color: #382218;">Hi ${name},</h2>
     

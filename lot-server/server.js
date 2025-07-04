@@ -95,7 +95,7 @@ app.post(
         
 
         const result = await resend.emails.send({
-          from: "Ila Cafe <onboarding@resend.dev>",
+          from: "Ila Cafe & Desserts <hello@ilacafedesserts.com>",
           to: email,
           subject: "🎉 Your Ila Cafe Anniversary Lot Entry is Confirmed!",
           html: `

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ilaLogo from "../src/assets/ila-logo.png";
+import ilaLogo from "../assets/ila-logo.png";
 const AnniversaryLot = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);

@@ -99,8 +99,8 @@ app.post(
           to: email,
           subject: "🎉 Your Ila Cafe Anniversary Lot Entry is Confirmed!",
           html: `
-  <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 20px;">
-   <a href="https://ilacafedesserts.com/"> <img src="https://ilacafedesserts.com/ila-logo.png" alt="Ila Cafe Logo" style="max-width: 150px; margin-bottom: 20px;" /></a>
+  <div style="font-family: Arial, sans-serif; max-width: 600px; text-align: center; margin: auto; border: 1px solid #eee; padding: 20px;">
+   <a href="https://ilacafedesserts.com/"> <img src="https://ilacafedesserts.com/ila-logo.png" alt="Ila Cafe Logo" style="max-width: 75px; margin: 10px auto; " /></a>
     
     <h2 style="color: #382218;">Hi ${name},</h2>
     

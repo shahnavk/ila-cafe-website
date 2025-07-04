@@ -104,8 +104,6 @@ app.post(
 
         const axios = require("axios");
 
-        const axios = require("axios");
-
         const now = new Date();
         const date = now.toISOString().split("T")[0]; // YYYY-MM-DD
         const time = now.toTimeString().split(" ")[0]; // HH:MM:SS
@@ -122,6 +120,9 @@ app.post(
             phone: metadata.phone || "",
             lotnumber: lotNumber,
             used: "no",
+            date,
+            time,
+            expires_at: expiryDate
           },
         });
         console.log("📝 Saved to Google Sheet");

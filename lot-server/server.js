@@ -123,7 +123,7 @@ app.post(
 
     <p style="font-size: 15px; color: #444;">
       🗓️ <strong>Purchase Date:</strong> ${purchaseDate}<br />
-      📅 <strong>Valid Until:</strong> ${expiryDate}<br />
+      📅 <strong>Valid Until:</strong> ${validUntil}<br />
       💳 <strong>Amount Paid:</strong> £19.99 via Stripe
     </p>
 

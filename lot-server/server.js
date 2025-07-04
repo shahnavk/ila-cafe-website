@@ -90,11 +90,44 @@ app.post(
         const { Resend } = require("resend");
         const resend = new Resend(process.env.RESEND_API_KEY);
 
+        const now = new Date();
+        const purchaseDate = now.toLocaleString("en-GB", { timeZone: "Europe/London" });
+        const validUntil = new Date(now.setMonth(now.getMonth() + 6)).toLocaleDateString("en-GB");
+
         const result = await resend.emails.send({
           from: "onboarding@resend.dev",
           to: email,
           subject: "🎉 Your Ila Cafe Anniversary Lot Entry is Confirmed!",
-          html: `<p>Hi ${name}, your lot number is <strong>${lotNumber}</strong></p>`, // Simplified for debugging
+          html: `
+  <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 20px;">
+    <img src="https://ilacafedesserts.com/logo.png" alt="Ila Cafe Logo" style="max-width: 150px; margin-bottom: 20px;" />
+    
+    <h2 style="color: #382218;">Hi ${name},</h2>
+    
+    <p style="font-size: 16px; color: #444;">
+      Thank you for entering the <strong>Ila Cafe Anniversary Lot</strong>! 🎉
+    </p>
+
+    <div style="margin: 30px 0; padding: 20px; background: #fde7cc; text-align: center; border-radius: 12px;">
+      <p style="margin: 0; font-size: 18px; color: #382218;">Your Lot Number</p>
+      <h1 style="margin: 0; font-size: 36px; color: #b38e67;">${lotNumber}</h1>
+    </div>
+
+    <p style="font-size: 15px; color: #444;">
+      🗓️ <strong>Purchase Date:</strong> ${purchaseDate}<br />
+      📅 <strong>Valid Until:</strong> ${validUntil}<br />
+      💳 <strong>Amount Paid:</strong> £19.99 via Stripe
+    </p>
+
+    <p style="font-size: 14px; color: #666; margin-top: 30px;">
+      👉 To stay updated, follow us on Instagram at 
+      <a href="https://instagram.com/ila.cafe" style="color: #7aa562;">@ila.cafe</a> <br />
+      📍 Visit us or show this lot number at the counter to redeem within the validity period.
+    </p>
+
+    <p style="font-size: 13px; color: #aaa; margin-top: 40px;">— The Ila Cafe Team</p>
+  </div>
+`, 
         });
 
         console.log("✅ Email sent to", email);

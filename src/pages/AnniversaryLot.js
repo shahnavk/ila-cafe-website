@@ -37,7 +37,9 @@ const AnniversaryLot = () => {
       const session = await response.json();
 
       if (session.url) {
-        window.location.href = session.url; // Redirect to Stripe Checkout
+        setTimeout(() => {
+          window.location.href = session.url;
+        }, 600); // Show loader for 600ms
       } else {
         alert("Something went wrong, please try again.");
         setLoading(false); // ❗ Stop loading if error
@@ -161,7 +163,7 @@ const AnniversaryLot = () => {
                     Save & Continue
                   </button>
                 </form>
-              }
+              
 
               {/* <div>
                 <label className="block mb-1 font-semibold">Full Name</label>

@@ -56,15 +56,15 @@ const Menu = () => {
   const [activeTab, setActiveTab] = useState(categories[0]);
 
   return (
-    <div className="p-6 max-w-6xl mx-auto min-h-screen">
-      <h1 className="text-3xl font-bold mb-6 text-center text-textbrown">Our Menu</h1>
+    <div className="p-6 sm:p-10 max-w-6xl mx-auto min-h-screen">
+      <h1 className="text-4xl font-extrabold text-center text-textbrown mb-10">Our Menu</h1>
 
       {/* Tabs */}
-      <div className="flex flex-wrap justify-center gap-3 mb-8">
+      <div className="flex flex-wrap justify-center gap-3 mb-10">
         {categories.map((category) => (
           <button
             key={category}
-            className={`px-4 py-2 text-sm font-semibold rounded-full transition-all ${
+            className={`px-5 py-2 text-sm sm:text-base font-medium rounded-full shadow-sm transition-all ${
               activeTab === category
                 ? 'bg-cafebrown text-white'
                 : 'bg-cafebeige text-textbrown hover:bg-amber-200'
@@ -77,7 +77,7 @@ const Menu = () => {
       </div>
 
       {/* Active Tab Content */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {menuData[activeTab].map((item, idx) => (
           <MenuCard key={idx} {...item} />
         ))}

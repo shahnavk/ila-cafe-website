@@ -67,7 +67,7 @@ const Menu = () => {
             className={`px-5 py-2 text-sm sm:text-base font-medium rounded-full shadow-sm transition-all ${
               activeTab === category
                 ? 'bg-cafebrown text-white'
-                : 'bg-cafebeige text-textbrown hover:bg-amber-200'
+                : 'bg-cafebeige text-textbrown hover:bg-cafegreen hover:text-white'
             }`}
             onClick={() => setActiveTab(category)}
           >

@@ -6,17 +6,22 @@ const AnniversaryLotSuccess = () => (
         alt="Ila Cafe Logo"
         className="mx-auto w-16 mb-4"
       />
-      <h1 className="text-3xl sm:text-4xl font-bold text-green-600 mb-3">
-        🎉 Thank You!
+      <h1 className="text-3xl sm:text-4xl font-bold text-cafegreen mb-3">
+        Thank You!
       </h1>
       <p className="text-lg sm:text-xl text-textbrown font-medium">
         Your payment was successful and you're now officially entered into the
-        <strong className="text-cafebrown"> Anniversary Lot Draw</strong>! 🍰🚗
+        <strong className="text-cafebrown"> Anniversary Lot Draw</strong>!
       </p>
-      <p className="text-sm text-gray-600 mt-4">
-        Stay tuned on our Instagram and website for updates. We’ll notify you if
-        you’re the lucky winner!
+
+      <p className="text-base text-gray-700 mt-4">
+        A confirmation email with your Lot Number and voucher details has been sent to your inbox.
       </p>
+
+      <p className="text-sm text-gray-600 mt-2">
+        Stay tuned on our Instagram and website for updates. The lucky winner will be announced once all 799 entries are sold.
+      </p>
+
       <a
         href="/"
         className="inline-block mt-6 bg-cafegreen text-white px-6 py-2 rounded-full font-semibold hover:bg-cafebrown transition"

@@ -28,8 +28,9 @@ export default function Navbar() {
               key={label}
               to={path}
               className={({ isActive }) =>
-                `flex items-center gap-1 relative font-medium text-sm after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:transition-all after:duration-300
-                ${isActive ? 'text-cafegreen after:w-full' : 'text-gray-700 after:w-0 hover:after:w-full hover:text-cafegreen'}`
+                `flex items-center gap-1 relative font-medium text-sm
+                 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-cafebrown after:transition-all after:duration-300
+                 ${isActive ? 'text-cafegreen after:w-full' : 'text-gray-700 after:w-0 hover:after:w-full hover:text-cafegreen'}`
               }
             >
               {icon}
@@ -47,7 +48,7 @@ export default function Navbar() {
 
         {/* Desktop Right: CTA + Search */}
         <div className="hidden md:flex items-center gap-4 ml-auto">
-          <Link to="/anniversaryLot" className="bg-cafebrown text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90 transition">
+          <Link to="/anniversaryLot" className="bg-cafebrown text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-cafegreen transition">
             Join Anniversary Lot
           </Link>
           <button className="hover:text-cafegreen text-textbrown" aria-label="Search">

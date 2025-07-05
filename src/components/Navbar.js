@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { Search, Menu as MenuIcon, X } from "lucide-react";
 import { Link } from 'react-router-dom';
 import { UtensilsCrossed } from "lucide-react";
+import { Mail } from "lucide-react";
+
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,7 +17,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = ['Menu'];
+  const navLinks = ['Menu', 'Contact'];
 
   return (
     <header
@@ -30,10 +32,12 @@ export default function Navbar() {
           {navLinks.map((label) => (
             <Link
               key={label}
-              to={label === 'Menu' ? '/menu' : '#'}
+              to={label === 'Menu' ? '/menu' : label === 'Contact' ? '/contact' : '#'}
+
               className="flex items-center gap-1 relative text-gray-700 font-medium text-sm after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-cafebrown after:transition-all after:duration-300 hover:after:w-full hover:text-cafegreen"
             >
               {label === 'Menu' && <UtensilsCrossed size={18} />}
+              {label === 'Contact' && <Mail size={18} />}
               <span>{label}</span>
             </Link>
           ))}
@@ -73,7 +77,8 @@ export default function Navbar() {
           {navLinks.map((label) => (
             <Link
               key={label}
-              to={label === 'Menu' ? '/menu' : '#'}
+              to={label === 'Menu' ? '/menu' : label === 'Contact' ? '/contact' : '#'}
+
               className="block py-2 text-textbrown font-medium text-sm border-b border-cafebrown hover:text-cafegreen"
               onClick={() => setIsMobileMenuOpen(false)}
             >

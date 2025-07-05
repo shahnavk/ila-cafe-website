@@ -6,7 +6,7 @@ const Home = () => (
     {/* Welcome Section */}
     <section className="relative bg-cafe-texture bg-cover bg-center py-8 pt-0">
       {/* 🎉 Anniversary Lot - Top Banner */}
-      <div className=" mx-auto p-2 sm:px-20 bg-car-bg bg-center bg-contain bg-no-repeat  bg-white bg-opacity-50 mb-8 py-8" style={{ backgroundSize: 'auto 90%' }} >
+      <div className=" mx-auto bg-car-bg bg-center bg-contain bg-no-repeat p-2 sm:px-20 mb-8 py-8" style={{ backgroundSize: 'auto 90%' }} >
         {/* Text */}
         {/* <div className="w-44 h-44 sm:w-52 sm:h-52 rounded-full bg-cafebrown flex items-center justify-center mx-auto text-center p-4 shadow-lg">
           <p className="text-center text-sm sm:text-base p-0 text-white">
@@ -16,18 +16,26 @@ const Home = () => (
           </p>
         </div> */}
         <div className="text-center md:text-center bg-white rounded-xl  bg-opacity-70 py-8 shadow-lg">
-          <h2 className="text-2xl stroke-textbrown sm:text-3xl md:text-4xl font-extrabold text-textbrown animate-[zoomInOut_2s_ease-in-out_infinite]">
-            {/* 🎉 🎉 */}Anniversary Gift
+          <h2 className="text-2xl stroke-textbrown sm:text-3xl md:text-4xl font-extrabold text-textbrown animate-[zoomInOut_2s_ease-in-out_infinite] drop-shadow-sm" style={{textShadow: 'rgba(0, 0, 0, 0.4) 1px 3px 16px'}}>
+            {/* 🎉 🎉 */}Anniversary Lucky Draw
           </h2>
-          <p className="text-base sm:text-lg text-cafebrown m-4">
+          {/* <img
+  src={carImage}
+  alt="Mercedes Benz A180"
+  className="mx-auto mt-4 w-3/5 sm:w-1/2 md:w-1/3"
+/> */}
+          <p className="text-xl sm:text-2xl text-cafebrown m-4">
             <strong>Mercedes Benz A180</strong>
           </p>
+          <p className="text-base sm:text-lg text-textbrown">
+            <strong>799 Entries. One Winner.</strong>
+          </p>
           <a
-            href="/anniversaryLot"
-            className="inline-block mt-2 bg-gradient-to-r from-cafegreen via-textbrown to-cafegreen bg-[length:150%_200%] text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition font-semibold animate-gradient-x"
-          >
-            Enter the Lot Now →
-          </a>
+  href="/anniversaryLot"
+  className="inline-block mt-4 bg-gradient-to-r from-cafegreen via-textbrown to-cafegreen bg-[length:150%_200%] text-white px-6 py-2 rounded-full hover:scale-105 transition-transform duration-300 shadow-lg font-semibold animate-gradient-x"
+>
+Claim Your Spot Now →
+</a>
         </div>
         {/* Image */}
         

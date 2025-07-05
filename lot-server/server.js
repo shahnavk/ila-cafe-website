@@ -140,11 +140,11 @@ app.post(
                 📍 Please show this lot number at the counter to redeem your food coupon before the expiry date.<br /><br/>
                 👉 Follow us on Instagram: 
                 <a href="https://instagram.com/ilacafedesserts" style="color: #7aa562; text-decoration: none;">
-                  @ila.cafe
+                  @ilacafedesserts
                 </a> <br />
                 📊 <strong>Want to check how many coupons are sold?</strong><br />
                 👉 Visit 
-                <a href="https://ilacafedesserts.com/" style="color: #b38e67; font-weight: bold; text-decoration: none;">
+                <a href="https://ilacafedesserts.com/" style="color: #7aa562; font-weight: bold; text-decoration: none;">
                   ilacafedesserts.com
                 </a> for live updates and more details.<br/><br/>
                 🎁 The lucky draw winner will be announced once all 799 lots are sold.
@@ -152,7 +152,7 @@ app.post(
             </div>
         
             <div style="background-color: #f4f4f4; text-align: center; padding: 20px; font-size: 13px; color: #999;">
-              — The Ila Cafe Team
+              — The Ila Cafe & Desserts Team
             </div>
           </div>
           `,        

@@ -129,8 +129,9 @@ app.post(
 
     <p style="font-size: 14px; color: #666; margin-top: 30px;">
       👉 To stay updated, follow us on Instagram at 
-      <a href="https://instagram.com/ila.cafe" style="color: #7aa562;">@ila.cafe</a> <br />
-      📍 Visit us or show this lot number at the counter to redeem within the validity period.
+      <a href="https://instagram.com/ilacafedesserts" style="color: #7aa562;">@ila.cafe</a> <br />
+      👉Track the count updates on our website! The winner of the lucky draw will be announced after 799 purchases are completed.<br/>
+      📍 Visit us and  show this lot number at the counter to redeem your food coupon within the validity period .
     </p>
 
     <p style="font-size: 13px; color: #aaa; margin-top: 40px;">— The Ila Cafe Team</p>

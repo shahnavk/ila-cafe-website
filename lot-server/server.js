@@ -137,13 +137,17 @@ app.post(
               </table>
         
               <p style="font-size: 14px; color: #555; line-height: 1.6; margin-top: 30px;">
-                📍 Please show this lot number at the counter to redeem your food coupon.<br />
-                🕒 Redeem it before the expiry date.<br /><br/>
+                📍 Please show this lot number at the counter to redeem your food coupon before the expiry date.<br /><br/>
                 👉 Follow us on Instagram: 
                 <a href="https://instagram.com/ilacafedesserts" style="color: #7aa562; text-decoration: none;">
                   @ila.cafe
                 </a> <br />
-                🎉 The lucky draw winner will be announced once all 799 lots are sold.
+                📊 <strong>Want to check how many coupons are sold?</strong><br />
+                👉 Visit 
+                <a href="https://ilacafedesserts.com/" style="color: #b38e67; font-weight: bold; text-decoration: none;">
+                  ilacafedesserts.com
+                </a> for live updates and more details.<br/><br/>
+                🎁 The lucky draw winner will be announced once all 799 lots are sold.
               </p>
             </div>
         
@@ -151,8 +155,7 @@ app.post(
               — The Ila Cafe Team
             </div>
           </div>
-          `,
-        
+          `,        
         });
 
         console.log("✅ Email sent to", email);

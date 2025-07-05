@@ -107,36 +107,52 @@ app.post(
           to: email,
           subject: "🎉 Your Ila Cafe Anniversary Lot Entry is Confirmed!",
           html: `
-  <div style="font-family: Arial, sans-serif; max-width: 600px; text-align: center; margin: auto; border: 1px solid #eee; padding: 20px;">
-   <a href="https://ilacafedesserts.com/"> <img src="https://ilacafedesserts.com/ila-logo.png" alt="Ila Cafe Logo" style="max-width: 75px; margin: 10px auto; " /></a>
-    
-    <h2 style="color: #382218;">Hi ${name},</h2>
-    
-    <p style="font-size: 16px; color: #444;">
-      Thank you for entering the <strong>Ila Cafe Anniversary Lot</strong>! 🎉
-    </p>
-
-    <div style="margin: 30px 0; padding: 20px; background: #fde7cc; text-align: center; border-radius: 12px;">
-      <p style="margin: 0; font-size: 18px; color: #382218;">Your Lot Number</p>
-      <h1 style="margin: 0; font-size: 36px; color: #b38e67;">${lotNumber}</h1>
-    </div>
-
-    <p style="font-size: 15px; color: #444;">
-      🗓️ <strong>Purchase Date:</strong> ${purchaseDate}<br />
-      📅 <strong>Valid Until:</strong> ${validUntil}<br />
-      💳 <strong>Amount Paid:</strong> £19.99 via Stripe
-    </p>
-
-    <p style="font-size: 14px; color: #666; margin-top: 30px;">
-      👉 To stay updated, follow us on Instagram at 
-      <a href="https://instagram.com/ilacafedesserts" style="color: #7aa562;">@ila.cafe</a> <br />
-      👉Track the count updates on our website! The winner of the lucky draw will be announced after 799 purchases are completed.<br/>
-      📍 Visit us and  show this lot number at the counter to redeem your food coupon within the validity period .
-    </p>
-
-    <p style="font-size: 13px; color: #aaa; margin-top: 40px;">— The Ila Cafe Team</p>
-  </div>
-`, 
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #fff; border-radius: 12px; border: 1px solid #eee; overflow: hidden;">
+            
+            <div style="background-color: #fde7cc; padding: 20px; text-align: center;">
+              <a href="https://ilacafedesserts.com/">
+                <img src="https://ilacafedesserts.com/ila-logo.png" alt="Ila Cafe Logo" style="max-width: 70px;" />
+              </a>
+              <h2 style="margin: 15px 0 5px; color: #382218;">Thank You for Joining the Celebration!</h2>
+              <p style="color: #382218; font-size: 15px;">Your Ila Cafe Anniversary Lot entry is confirmed.</p>
+            </div>
+        
+            <div style="padding: 30px 20px; text-align: center;">
+              <p style="font-size: 16px; color: #444; margin-bottom: 10px;">Hi <strong>${name}</strong>,</p>
+        
+              <p style="font-size: 15px; color: #444; line-height: 1.6;">
+                We're thrilled to have you in our <strong>Anniversary Lucky Draw</strong> 🎉 <br/>
+                Only <strong>799 spots</strong> are available, and you're officially in!
+              </p>
+        
+              <div style="margin: 30px auto; padding: 20px; background: #fff5e8; border: 2px dashed #b38e67; border-radius: 12px; width: fit-content;">
+                <p style="margin: 0; font-size: 18px; color: #382218;">🎟️ Your Lot Number</p>
+                <h1 style="margin: 0; font-size: 42px; color: #b38e67;">${lotNumber}</h1>
+              </div>
+        
+              <table style="margin: 20px auto; font-size: 15px; color: #444;">
+                <tr><td style="padding: 4px 8px;">🗓️ <strong>Purchase Date:</strong></td><td>${purchaseDate}</td></tr>
+                <tr><td style="padding: 4px 8px;">📅 <strong>Valid Until:</strong></td><td>${validUntil}</td></tr>
+                <tr><td style="padding: 4px 8px;">💳 <strong>Amount Paid:</strong></td><td>£19.99 via Stripe</td></tr>
+              </table>
+        
+              <p style="font-size: 14px; color: #555; line-height: 1.6; margin-top: 30px;">
+                📍 Please show this lot number at the counter to redeem your food coupon.<br />
+                🕒 Redeem it before the expiry date.<br /><br/>
+                👉 Follow us on Instagram: 
+                <a href="https://instagram.com/ilacafedesserts" style="color: #7aa562; text-decoration: none;">
+                  @ila.cafe
+                </a> <br />
+                🎉 The lucky draw winner will be announced once all 799 lots are sold.
+              </p>
+            </div>
+        
+            <div style="background-color: #f4f4f4; text-align: center; padding: 20px; font-size: 13px; color: #999;">
+              — The Ila Cafe Team
+            </div>
+          </div>
+          `,
+        
         });
 
         console.log("✅ Email sent to", email);

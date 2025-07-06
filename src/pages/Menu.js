@@ -56,6 +56,7 @@ const Menu = () => {
   const [activeTab, setActiveTab] = useState(categories[0]);
 
   return (
+    <div className="bg-cafe-bg bg-cover bg-center min-h-screen py-6 px-4">
     <div className="p-6 sm:p-10 max-w-6xl mx-auto min-h-screen">
       <h1 className="text-4xl font-extrabold text-center text-textbrown mb-10">Our Menu</h1>
 
@@ -66,8 +67,8 @@ const Menu = () => {
             key={category}
             className={`px-5 py-2 text-sm sm:text-base font-medium rounded-full shadow-sm transition-all ${
               activeTab === category
-                ? 'bg-cafebrown text-white'
-                : 'bg-cafebeige text-textbrown hover:bg-cafegreen hover:text-white'
+                ? 'bg-textbrown text-white'
+                : 'bg-cafebrown text-white hover:bg-cafegreen'
             }`}
             onClick={() => setActiveTab(category)}
           >
@@ -82,6 +83,7 @@ const Menu = () => {
           <MenuCard key={idx} {...item} />
         ))}
       </div>
+    </div>
     </div>
   );
 };

@@ -17,12 +17,15 @@ const AnniversaryLot = () => {
     e.preventDefault();
     setLoading(true);
 
+    
+
+    
     const form = new FormData(e.target);
     const formData = {
-      name: form.get("name"),
-      email: form.get("email"),
-      instagram: form.get("instagram"),
-      phone: form.get("phone"),
+      name: form.get("name").trim(),
+      email: form.get("email").trim(),
+      instagram: form.get("instagram")?.trim(),
+      phone: form.get("phone").trim(),
     };
 
     try {
@@ -104,7 +107,7 @@ const AnniversaryLot = () => {
             <div className="bg-white bg-opacity-80 p-6 rounded-xl shadow text-textbrown leading-relaxed">
               <h3 className="text-xl font-bold mb-3">About This Lot</h3>
               <p>
-                Purchase a <strong>£19.99 food voucher</strong> to enter our lucky draw and win a <strong>Mercedes Benz A180</strong>. Enjoy exclusive desserts at Ila Cafe with your voucher — a treat for you and a chance to win big! 🍰
+                Purchase a <strong>£19.99 food voucher</strong> to enter our lucky draw and win a <strong>Mercedes Benz A180</strong>. Enjoy exclusive desserts at Ila Cafe with your voucher — a treat for you and a chance to win big! 
               </p>
               <p className="mt-2">
                 Don’t miss this opportunity! <strong>Buy now</strong> and become one of the lucky 799 participants.
@@ -131,48 +134,60 @@ const AnniversaryLot = () => {
               Enter Your Details
             </h2>
             <form onSubmit={handleSubmit} className="grid gap-4 text-left">
-              <div>
-                <label className="block mb-1 font-semibold">Full Name</label>
-                <input
-                  name="name"
-                  type="text"
-                  className="w-full p-2 border rounded"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block mb-1 font-semibold">Email</label>
-                <input
-                  name="email"
-                  type="email"
-                  className="w-full p-2 border rounded"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block mb-1 font-semibold">Instagram</label>
-                <input
-                  name="instagram"
-                  type="text"
-                  className="w-full p-2 border rounded"
-                />
-              </div>
-              <div>
-                <label className="block mb-1 font-semibold">Phone Number</label>
-                <input
-                  name="phone"
-                  type="tel"
-                  className="w-full p-2 border rounded"
-                  required
-                />
-              </div>
-              <button
-                type="submit"
-                className="mt-4 bg-cafebrown text-white px-6 py-2 rounded hover:bg-opacity-90 transition"
-              >
-                Save & Continue
-              </button>
-            </form>
+  <div>
+    <label className="block mb-1 font-semibold">Full Name</label>
+    <input
+      name="name"
+      type="text"
+      className="w-full p-2 border rounded"
+      pattern="^[a-zA-Z\s]{2,40}$"
+      title="Enter a valid name (letters only, 2–40 characters)"
+      required
+    />
+  </div>
+
+  <div>
+    <label className="block mb-1 font-semibold">Email</label>
+    <input
+      name="email"
+      type="email"
+      className="w-full p-2 border rounded"
+      required
+    />
+  </div>
+
+  <div>
+    <label className="block mb-1 font-semibold">Instagram</label>
+    <input
+      name="instagram"
+      type="text"
+      className="w-full p-2 border rounded"
+      pattern="^@?(\w){1,30}$"
+      title="Example: yourhandle or @yourhandle (no spaces)"
+    />
+  </div>
+
+  <div>
+    <label className="block mb-1 font-semibold">Phone Number</label>
+    <input
+      name="phone"
+      type="tel"
+      className="w-full p-2 border rounded"
+      pattern="^(\+44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$"
+      title="Enter a valid UK mobile number"
+      required
+    />
+  </div>
+
+  <button
+    type="submit"
+    disabled={loading}
+    className="mt-4 bg-cafebrown text-white px-6 py-2 rounded hover:bg-opacity-90 transition disabled:opacity-60"
+  >
+    {loading ? "Processing..." : "Save & Continue"}
+  </button>
+</form>
+
           </div>
         </section>
       </div>

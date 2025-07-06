@@ -18,10 +18,10 @@ export default function Navbar() {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 bg-white transition-all duration-300 py-4 px-6 ${isScrolled ? 'shadow-md' : 'bg-transparent'}`}>
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'shadow-md bg-white' : 'bg-transparent'}`}>
       <nav className="flex items-center justify-between px-6 py-3 min-h-[80px] relative">
 
-        {/* Desktop Links */}
+        {/* Desktop Nav Links */}
         <div className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
           {navLinks.map(({ label, path, icon }) => (
             <NavLink
@@ -39,14 +39,14 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Logo */}
-        <div className="absolute left-1/2 -translate-x-1/2 ">
+        {/* Logo - Centered on md+ only */}
+        <div className="md:absolute md:left-1/2 md:-translate-x-1/2">
           <Link to="/" aria-label="Go to homepage">
-            <img src="/ila-Logo-svg.svg" alt="Ila Cafe Logo" className="h-16 sm:h-20 w-auto" />
+            <img src="/ila-Logo-svg.svg" alt="Ila Cafe Logo" className="h-12 sm:h-16 w-auto" />
           </Link>
         </div>
 
-        {/* Desktop Right: CTA + Search */}
+        {/* CTA + Search (Desktop Only) */}
         <div className="hidden md:flex items-center gap-4 ml-auto">
           <Link to="/anniversaryLot" className="bg-cafebrown text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-cafegreen transition">
             Join Anniversary Lot
@@ -56,7 +56,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Toggle */}
+        {/* Mobile Menu Toggle */}
         <div className="md:hidden ml-auto">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -70,8 +70,8 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden px-6 pb-6 bg-cafebeige/90 backdrop-blur transition-all duration-300 transform ${
-        isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-2 opacity-0 pointer-events-none'
+      <div className={`md:hidden flex flex-col items-center text-center px-6 pb-6 bg-cafebeige/90 backdrop-blur transition-all duration-300 transform ${
+        isMobileMenuOpen ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-2 opacity-0 pointer-events-none'
       }`}>
         {navLinks.map(({ label, path }) => (
           <NavLink
@@ -79,8 +79,9 @@ export default function Navbar() {
             to={path}
             onClick={() => setIsMobileMenuOpen(false)}
             className={({ isActive }) =>
-              `block py-2 text-textbrown font-medium text-sm border-b border-cafebrown
-              ${isActive ? 'text-cafegreen' : 'hover:text-cafegreen'}`
+              `w-full py-3 border-b border-cafebrown font-medium text-textbrown text-base ${
+                isActive ? 'text-cafegreen' : 'hover:text-cafegreen'
+              }`
             }
           >
             {label}
@@ -88,12 +89,15 @@ export default function Navbar() {
         ))}
         <Link
           to="/anniversaryLot"
-          className="block mt-4 text-textbrown font-medium hover:text-cafegreen"
+          className="w-full py-3 font-medium text-textbrown hover:text-cafegreen border-b border-cafebrown"
           onClick={() => setIsMobileMenuOpen(false)}
         >
           Join Anniversary Lot
         </Link>
-        <button className="mt-4 flex items-center gap-1 text-textbrown hover:text-cafegreen" aria-label="Search">
+        <button
+          className="w-full py-3 flex justify-center items-center gap-2 text-textbrown hover:text-cafegreen"
+          aria-label="Search"
+        >
           <Search size={18} />
           <span>Search</span>
         </button>
@@ -101,3 +105,4 @@ export default function Navbar() {
     </header>
   );
 }
+

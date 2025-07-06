@@ -36,6 +36,15 @@ const Footer = () => {
   <i className="fab fa-whatsapp text-lg" />
   WhatsApp
 </a>
+<a
+    href="https://g.co/kgs/KahmwcP"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-2 hover:text-cafegreen transition"
+  >
+   <i class="fa-brands fa-google"/>
+    Google
+  </a>
         </div>
       </div>
     </footer>

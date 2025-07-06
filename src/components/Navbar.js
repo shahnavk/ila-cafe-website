@@ -7,7 +7,10 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+      setIsMobileMenuOpen(false); // 👈 auto-close menu on scroll
+    };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -70,38 +73,42 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden flex flex-col items-center text-center px-6 pb-6 bg-cafebeige/90 backdrop-blur transition-all duration-300 transform ${
-        isMobileMenuOpen ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-2 opacity-0 pointer-events-none'
-      }`}>
-        {navLinks.map(({ label, path }) => (
-          <NavLink
-            key={label}
-            to={path}
-            onClick={() => setIsMobileMenuOpen(false)}
-            className={({ isActive }) =>
-              `w-full py-3 border-b border-cafebrown font-medium text-textbrown text-base ${
-                isActive ? 'text-cafegreen' : 'hover:text-cafegreen'
-              }`
-            }
-          >
-            {label}
-          </NavLink>
-        ))}
-        <Link
-          to="/anniversaryLot"
-          className="w-full py-3 font-medium text-textbrown hover:text-cafegreen border-b border-cafebrown"
-          onClick={() => setIsMobileMenuOpen(false)}
-        >
-          Join Anniversary Lot
-        </Link>
-        <button
-          className="w-full py-3 flex justify-center items-center gap-2 text-textbrown hover:text-cafegreen"
-          aria-label="Search"
-        >
-          <Search size={18} />
-          <span>Search</span>
-        </button>
-      </div>
+      {/* Mobile Menu */}
+<div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out bg-cafebeige/90 backdrop-blur text-center px-6 ${
+  isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+}`}>
+  <div className="flex flex-col items-center">
+    {navLinks.map(({ label, path }) => (
+      <NavLink
+        key={label}
+        to={path}
+        onClick={() => setIsMobileMenuOpen(false)}
+        className={({ isActive }) =>
+          `w-full py-3 border-b border-cafebrown font-medium text-textbrown text-base ${
+            isActive ? 'text-cafegreen' : 'hover:text-cafegreen'
+          }`
+        }
+      >
+        {label}
+      </NavLink>
+    ))}
+    <Link
+      to="/anniversaryLot"
+      className="w-full py-3 font-medium text-textbrown hover:text-cafegreen border-b border-cafebrown"
+      onClick={() => setIsMobileMenuOpen(false)}
+    >
+      Join Anniversary Lot
+    </Link>
+    <button
+      className="w-full py-3 flex justify-center items-center gap-2 text-textbrown hover:text-cafegreen"
+      aria-label="Search"
+    >
+      <Search size={18} />
+      <span>Search</span>
+    </button>
+  </div>
+</div>
+
     </header>
   );
 }

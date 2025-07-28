@@ -13,6 +13,8 @@ const AnniversaryLot = () => {
       .catch((err) => console.error("Error fetching sold count:", err));
   }, []);
 
+  console.log(54308 + soldCount);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -81,20 +83,20 @@ const AnniversaryLot = () => {
         <div className="bg-white bg-opacity-80 p-6 rounded-xl shadow-md">
               <div className="text-white bg-textbrown p-4 rounded-lg text-center">
                 <p className="text-lg">
-                  A chance to win, limited to 799 entries. Join our Anniversary Lot today.
+                  A chance to win, limited to 899 entries. Join our Anniversary Lot today.
                 </p>
               </div>
               <div className="w-full text-sm text-textbrown mt-4 flex justify-between">
-                <span>{soldCount} / 799<br/>Coupons sold</span>
-                <span>{799 - soldCount}<br/>Coupons remaining</span>
+                <span>{soldCount} / 899<br/>Coupons sold</span>
+                <span>{899 - soldCount}<br/>Coupons remaining</span>
               </div>
               <div className="relative w-full bg-gray-200 h-4 rounded mt-2">
                 <div
                   className="bg-cafegreen h-4 rounded"
-                  style={{ width: `${(soldCount / 799) * 100}%` }}
+                  style={{ width: `${(soldCount / 899) * 100}%` }}
                 ></div>
                 <div className="absolute top-0 left-0 w-full h-4 text-center text-xs text-textbrown">
-                  {((soldCount / 799) * 100).toFixed(1)}% sold
+                  {((soldCount / 899) * 100).toFixed(1)}% sold
                 </div>
               </div>
             </div>
@@ -110,7 +112,7 @@ const AnniversaryLot = () => {
                 Purchase a <strong>£19.99 food voucher</strong> to enter our lucky draw and win a <strong>Mercedes Benz A180</strong>. Enjoy exclusive desserts at Ila Cafe with your voucher — a treat for you and a chance to win big! 
               </p>
               <p className="mt-2">
-                Don’t miss this opportunity! <strong>Buy now</strong> and become one of the lucky 799 participants.
+                Don’t miss this opportunity! <strong>Buy now</strong> and become one of the lucky 899 participants.
               </p>
               <p className="mt-4 text-sm italic">
                 💡 Track sales progress and stay updated at <a href="https://ilacafedesserts.com" className="underline text-cafegreen">ilacafedesserts.com</a>.
@@ -123,7 +125,7 @@ const AnniversaryLot = () => {
                 <li>Must follow our Instagram account.</li>
                 <li>Share your food experience and tag us.</li>
                 <li>The winner will be selected via lucky draw.</li>
-                <li>Draw will be held once all 799 vouchers are sold.</li>
+                <li>Draw will be held once all 899 vouchers are sold.</li>
               </ul>
             </div>
           </div>

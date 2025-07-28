@@ -44,6 +44,7 @@ app.post(
       const email = metadata.email || customerDetails.email;
 
       const lotNumber = `LOT${Date.now().toString().slice(-5)}`;
+      
       console.log("✅ Payment complete for:", email);
       console.log("🎟️ Assigned lot number:", lotNumber);
 
@@ -122,7 +123,7 @@ app.post(
         
               <p style="font-size: 15px; color: #444; line-height: 1.6;">
                 We're thrilled to have you in our <strong>Anniversary Lucky Draw</strong> 🎉 <br/>
-                Only <strong>799 spots</strong> are available, and you're officially in!
+                Only <strong>899 spots</strong> are available, and you're officially in!
               </p>
         
               <div style="margin: 30px auto; padding: 20px; background: #fff5e8; border: 2px dashed #b38e67; border-radius: 12px; width: fit-content;">
@@ -147,7 +148,7 @@ app.post(
                 <a href="https://ilacafedesserts.com/" style="color: #7aa562; font-weight: bold; text-decoration: none;">
                   ilacafedesserts.com
                 </a> for live updates and more details.<br/><br/>
-                🎁 The lucky draw winner will be announced once all 799 lots are sold.
+                🎁 The lucky draw winner will be announced once all 899 lots are sold.
               </p>
             </div>
         

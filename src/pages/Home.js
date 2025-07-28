@@ -11,7 +11,7 @@ const Home = () => (
         {/* <div className="w-44 h-44 sm:w-52 sm:h-52 rounded-full bg-cafebrown flex items-center justify-center mx-auto text-center p-4 shadow-lg">
           <p className="text-center text-sm sm:text-base p-0 text-white">
             A chance to win, <br />
-            limited to <strong>799 entries</strong>.<br /> Join our Anniversary
+            limited to <strong>899 entries</strong>.<br /> Join our Anniversary
             Lot today.
           </p>
         </div> */}
@@ -28,7 +28,7 @@ const Home = () => (
             <strong>Mercedes Benz A180</strong>
           </p>
           <p className="text-base sm:text-lg text-textbrown">
-            <strong>799 Entries. One Winner.</strong>
+            <strong>899 Entries. One Winner.</strong>
           </p>
           <a
   href="/anniversaryLot"

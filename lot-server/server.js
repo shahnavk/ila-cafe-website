@@ -200,7 +200,7 @@ app.post("/create-checkout-session", async (req, res) => {
       mode: "payment",
       line_items: [
         {
-          price: "price_1RhgGOKoN1lr0sS65xZrzwt6", // ✅ Use your actual price ID
+          price: "price_1RqDLNKoN1lr0sS6SjVqCuYG", // ✅ Use your actual price ID
           quantity: 1,
         },
       ],

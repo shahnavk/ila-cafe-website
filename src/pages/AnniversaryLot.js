@@ -109,7 +109,7 @@ const AnniversaryLot = () => {
             <div className="bg-white bg-opacity-80 p-6 rounded-xl shadow text-textbrown leading-relaxed">
               <h3 className="text-xl font-bold mb-3">About This Lot</h3>
               <p>
-                Purchase a <strong>£19.99 food voucher</strong> to enter our lucky draw and win a <strong>Mercedes Benz A180</strong>. Enjoy exclusive desserts at Ila Cafe with your voucher — a treat for you and a chance to win big! 
+                Purchase a <strong>£14.99 food voucher</strong> to enter our lucky draw and win a <strong>Mercedes Benz A180</strong>. Enjoy exclusive desserts at Ila Cafe with your voucher — a treat for you and a chance to win big! 
               </p>
               <p className="mt-2">
                 Don’t miss this opportunity! <strong>Buy now</strong> and become one of the lucky 899 participants.
